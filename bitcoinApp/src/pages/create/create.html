@@ -20,7 +20,21 @@
       </ion-card-content>
 </ion-card>
 
-  <button ion-button round block (click)='createAddress()'>Create Bitcoin address</button>
+  <button ion-button round block (click)='createAddress()'>Create Bitcoin address
+  </button>
 
+  <ion-card>
+        <ion-card-header>
+          Bitcoin
+          <ion-icon name="logo-bitcoin"></ion-icon>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-list>
+              <button ion-item *ngFor="let address of addressList">
+                {{ address }}
+              </button>
+          </ion-list>
+        </ion-card-content>
+  </ion-card>
 
 </ion-content>
