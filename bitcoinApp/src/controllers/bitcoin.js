@@ -1,22 +1,21 @@
-const bitcoin = require('bitcoinjs-lib')
+var bitcoin = require('../../bitcoinjs-lib')
 
 function rng () { return Buffer.from('zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz') }
 
 keyPairSet = [];
 wifSet = [];
 addressSet = [];
-function createAddress(){
-  const keyPair = bitcoin.ECPair.makeRandom({rng:rng})
-  wifSet.push(keyPair.toWIF());
-  keyPairSet.push(keyPair);
-  addressSet.push(keyPair.getAddress())
-  console.log(addressSet, addressSet.length );
+let number = 5
+function createAddress(number, rng){
+  for(let i = 0; i < number; i++){
+    let keyPair = bitcoin.ECPair.makeRandom()
+    wifSet.push(keyPair.toWIF());
+    keyPairSet.push(keyPair);
+    addressSet.push(keyPair.getAddress())
+  }
+  // console.log(keyPairSet);
+  console.log(wifSet);
+  console.log(addressSet);
 }
-createAddress()
-createAddress()
-createAddress()
-createAddress()
-createAddress()
-createAddress()
 
-// module.exports = keyPair
+createAddress(number)

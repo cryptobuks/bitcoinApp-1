@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {crypto, address, ECPair, ECSignature, HDNode, Transaction} from 'bitcoinjs-lib';
+
 import { createAddress } from '../../controllers/bitcoin'
 
 /**
@@ -20,6 +20,9 @@ export class CreatePage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
+  createAddress(){
+    return createAddress()
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CreatePage');
