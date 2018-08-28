@@ -17,6 +17,10 @@ export class CreatePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
+  function createAddress('') {
+      throw new Error("Not implemented yet");
+  }
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CreatePage');
