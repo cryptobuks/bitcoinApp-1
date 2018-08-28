@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {crypto, address, ECPair, ECSignature, HDNode, Transaction} from 'bitcoinjs-lib';
-import { KeyPair } from '../../controllers/bitcoin'
+import { createAddress } from '../../controllers/bitcoin'
 
 /**
  * Generated class for the CreatePage page.
@@ -18,9 +18,6 @@ import { KeyPair } from '../../controllers/bitcoin'
 export class CreatePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-  function createAddress(){
-
   }
 
 

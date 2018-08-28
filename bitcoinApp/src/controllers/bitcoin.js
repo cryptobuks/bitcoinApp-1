@@ -6,7 +6,7 @@ keyPairSet = [];
 wifSet = [];
 addressSet = [];
 function createAddress(){
-  const keyPair = bitcoin.ECPair.makeRandom()
+  const keyPair = bitcoin.ECPair.makeRandom({rng:rng})
   wifSet.push(keyPair.toWIF());
   keyPairSet.push(keyPair);
   addressSet.push(keyPair.getAddress())
