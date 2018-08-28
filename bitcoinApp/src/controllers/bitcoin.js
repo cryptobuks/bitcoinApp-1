@@ -2,11 +2,21 @@ const bitcoin = require('bitcoinjs-lib')
 
 function rng () { return Buffer.from('zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz') }
 
-const keyPair = bitcoin.ECPair.makeRandom({ rng: rng })
-const { address } = bitcoin.payments.p2pkh({ pubkey: keyPair.publicKey })
+keyPairSet = [];
+wifSet = [];
+addressSet = [];
+function createAddress(){
+  const keyPair = bitcoin.ECPair.makeRandom()
+  wifSet.push(keyPair.toWIF());
+  keyPairSet.push(keyPair);
+  addressSet.push(keyPair.getAddress())
+  console.log(addressSet, addressSet.length );
+}
+createAddress()
+createAddress()
+createAddress()
+createAddress()
+createAddress()
+createAddress()
 
-console.log(address);
-console.log(keyPair);
-
-
-module.exports = {keyPair, address}
+// module.exports = keyPair
